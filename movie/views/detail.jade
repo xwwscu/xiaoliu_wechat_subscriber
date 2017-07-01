@@ -1,0 +1,45 @@
+extends ./wechat
+
+block content
+	style.
+		.hd {
+			padding: 2em 0;
+		}
+		.page_title {
+			text-align: center;
+			font-size: 30px;
+			color: #3cc51f;
+			font-weight: 400;
+			margin: 0 15%;
+		}
+		.center_style {
+			margin: 0 auto;
+		}
+
+	.page
+		.hd
+			h1.page_title=title
+		.bd
+			h4.weui_cells_title 电影介绍
+			.weui_cells
+				.weui_cell
+					.weui_cell_bd.weui_cell_primary
+						p 导演
+					.weui_cell_ft=director
+				.weui_cell
+					.weui_cell_bd.weui_cell_primary
+						p 上映时间
+					.weui_cell_ft=year
+				.weui_cell
+					.weui_cell_bd.weui_cell_primary
+						p 地区
+					.weui_cell_ft=country
+			h4.weui_cells_title 电影海报
+			if (poster)
+				img(src="#{poster}", style="width: 50%;", alt="#{title}")
+			else
+				h3.page_title 咦，图哪去了...
+			.weui_article
+				section
+					p=summary
+					
